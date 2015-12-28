@@ -20,3 +20,7 @@ Rust的目标也在于实现“零成本抽象（zero-cost abstractions）”，
 ## 翻译
 
 @张汉东
+
+为翻译做贡献，请给本书的[Github中文]发issue或pull request。
+
+[Github中文]: https://github.com/RustStudy/book
