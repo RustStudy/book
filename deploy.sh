@@ -10,7 +10,7 @@ git init
 git config user.name "blackanger"
 git config user.email "blackanger.z@gmail.com"
 
-git remote add upstream "https://$GH_TOKEN@github.com/RustStudy/book.git"
+git remote add upstream "https://ZhangHanDong@github.com/RustStudy/book.git"
 git fetch upstream
 git reset upstream/gh-pages
 
