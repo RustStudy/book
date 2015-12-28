@@ -1,19 +1,18 @@
-# The Rust Programming Language
+# Rust编程语言（The Rust Programming Language）
 
-This is the next iteration of “The Rust Programming Language”, which is
-currently located [in the main Rust repository][src]. If you want to read the
-book, you should check it out there or [on the web][prod].
+这是"Rust编程语言（The Rust Programming Language）"的下一次迭代版本，位于当前[Rust的主仓库中][src]。
+如果你想读本书，你可以直接在这里或者是去[官网][prod]查看。
 
 [src]: https://github.com/rust-lang/rust/tree/master/src/doc/book
 [prod]: https://doc.rust-lang.org/book/
 
-If you would like to see this version rendered, it’s [on GitHub pages][html].
+如果你想看当前这个版本，可以打开[GitHub pages][html].
 
 [html]: http://rust-lang.github.io/book/
 
-## Requirements
+## 要求
 
-Building the book requires [mdBook]. To get it:
+构建本书需要用到 [mdBook]:
 
 [mdBook]: https://github.com/azerupi/mdBook
 
@@ -21,28 +20,27 @@ Building the book requires [mdBook]. To get it:
 $ cargo install mdbook
 ```
 
-## Building
+## 构建
 
-To build the book, type:
+要构建本书，只需输入:
 
 ```bash
 $ make
 ```
 
-The output will be in the `book` subdirectory. To check it out, open it in
-your web browser:
+所有生成的页面都会被放到`book`子目录下。使用你的浏览器就可阅读：
 
 ```bash
 $ firefox book/index.html
 ```
 
-To run the tests:
+运行测试:
 
 ```bash
 $ make test
 ```
 
-To do both:
+也可以直接使用下面的命令进行构建和测试:
 
 ```bash
 $ make all
@@ -75,4 +73,3 @@ Finally, there’s the `S-` labels, which are for various ‘status’es:
   section.
 * `S-done`: imported into No Starch’s system. There may still be changes based
   on their feedback, even after a section is marked `S-done`.
-

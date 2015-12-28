@@ -7,10 +7,10 @@ rev=$(git rev-parse --short HEAD)
 cd book
 
 git init
-git config user.name "Steve Klabnik"
-git config user.email "steve@steveklabnik.com"
+git config user.name "blackanger"
+git config user.email "blackanger.z@gmail.com"
 
-git remote add upstream "https://$GH_TOKEN@github.com/rust-lang/book.git"
+git remote add upstream "https://$GH_TOKEN@github.com/RustStudy/book.git"
 git fetch upstream
 git reset upstream/gh-pages
 
