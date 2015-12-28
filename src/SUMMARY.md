@@ -1,9 +1,9 @@
-# The Rust Programming Language
+# Rust编程语言
 
-- [Introduction](introduction.md)
-    - [Installation](installation.md)
+- [介绍](introduction.md)
+    - [安装](installation.md)
     - [Hello, World!](hello-world.md)
-    - [The Design of Rust](design.md)
+    - [Rust的设计](design.md)
 
 - [Tutorial](tutorial.md)
 
