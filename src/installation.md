@@ -66,7 +66,7 @@ $ rustc --version
 如果还不行，就去rust IRC、Stack Overflow上面去求助吧。最简单的是去
 [the #rust IRC channel on irc.mozilla.org][irc], 可以通过
 [Mibbit][mibbit]来访问。 点击那个链接，我们就可以和其他的Rustacean
-(这是我们rust程序员为自己起的蠢萌的昵称)们 聊天。另外一些比较好的资源也包括 [the user’s forum][users]和 [Stack Overflow][stackoverflow].
+(这是我们rust程序员为自己起的呆萌的昵称)们 聊天。另外一些比较好的资源也包括 [the user’s forum][users]和 [Stack Overflow][stackoverflow].
 
 [irc]: irc://irc.mozilla.org/#rust
 [mibbit]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
