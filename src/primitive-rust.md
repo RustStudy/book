@@ -1,11 +1,8 @@
-# Primitive Rust
+# Rust基础
 
-We’ll start our journey with Rust by talking about the absolute basics —
-concepts that appear in almost every programming language. Many programming
-languages have lots in common at their core. None of the concepts presented are
-unique to Rust, but we’ll cover Rust’s particular syntax and conventions around
-these common concepts.
+我们将通过探讨绝对的基础知识（几乎每个编程语言中都会出现的概念）来开始Rust的旅程。
+许多程序语言的核心都有很多共同点。没有哪个概念是Rust独自提出的，但是我们将围绕这些概念来介绍Rust
+的特殊语法和约定。
 
-If you want to skip this section, you can, but you may end up coming back later
-to find out small details. These foundations will be in every single useful
-Rust program, and learning them gives us a strong core to start from.
+如果你想跳过本节，可以，但你可能会在之后为了查找一些细节而回来的。
+这些基础知识存在于每一个可用的Rust程序中，学习它们，能为我们筑好牢固的根基。
