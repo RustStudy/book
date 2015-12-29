@@ -8,7 +8,7 @@
 - [Tutorial](tutorial.md)
 
 - [Rust基础](primitive-rust.md)
-    - [Variable Bindings](variable-bindings.md)
+    - [变量绑定](variable-bindings.md)
     - [Functions](functions.md)
     - [Primitive Types](primitive-types.md)
     - [Comments](comments.md)
