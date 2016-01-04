@@ -10,7 +10,7 @@
 - [Rust基础](primitive-rust.md)
     - [变量绑定](variable-bindings.md)
     - [函数](functions.md)
-    - [Primitive Types](primitive-types.md)
+    - [基本类型](primitive-types.md)
     - [Comments](comments.md)
     - [`if`](if.md)
     - [Loops](loops.md)

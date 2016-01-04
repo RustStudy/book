@@ -1,11 +1,10 @@
-# Primitive Types
+# 基本类型
 
-We’ve seen that every value in Rust has a type of some kind.
-There are a number of types which are built into the language itself.
-We call these types ‘primitive’ types, since you can’t re-create them yourself.
-There are, of course, many non-primitive types provided by the standard library as well.
+我们已经发现了，Rust中每个值都有某种形式的类型。
+语言本身内置了一些类型，我们把这些类型叫做‘基本’类型，因为你不能创新创建它们。
+当然，在标准库里也提供了许多非基本类型。
 
-Remember, you can rely on type inference to figure out the type of a binding, or you can annotate it explicitly:
+不要忘记，你能依靠类型推导（type inference）来找出绑定的类型，也可以明确地标注类型:
 
 ```rust
 fn main() {
@@ -13,14 +12,14 @@ fn main() {
 }
 ```
 
-## Integers
+## 整数
 
-You’ve already seen one primitive type: `i32`.
-There are a number of built-in number types in Rust.
+你已经见过了一个基本类型: `i32`.
+Rust中有很多内置的数字类型.
 
-Here’s a chart of Rust’s integer types:
+这里有一个Rust中整数类型的图表:
 
-|        | signed | unsigned |
+|        | 符号（signed） | 无符号（unsigned） |
 |--------|--------|----------|
 |  8-bit |  i8    |  u8      |
 | 16-bit | i16    | u16      |
@@ -28,24 +27,25 @@ Here’s a chart of Rust’s integer types:
 | 64-bit | i64    | u64      |
 | arch   | isize  | usize    |
 
-We have both signed and unsigned variants of numbers, and each variant has an explicit size.
-Unsigned numbers are always positive, and signed numbers can be positive or negative.
-(Think ‘plus sign’ or ‘minus sign’: that’s a signed number.)
-Signed numbers are stored using ‘two’s compliment’ representation.
 
-Finally, `isize` and `usize` are different sizes based on the kind of computer your program is running on.
-If you are on a 64-bit architecture, they are 64 bits, and if you’re on a 32-bit one, they’re 32 bits.
+Rust有符号型和无符号型两种数字类型变种，每个变种都有明确的大小。无符号型数总是正的，符号型数有正有负。
+（想想‘加号’或‘减号’: 符号型数）
 
-So how do you choose from all these options? Well, if you really don’t know, the defaults are a good choice:
-integer types default to `i32`.
-The primary use case for `isize`/`usize` is when indexing some sort of collection.
-We’ll talk more about our first collection, arrays, in just a moment.
+符号型数是用‘二进制补码（two’s compliment）’表示的。
 
-## Floating-point numbers
+最后的`isize`和`usize`是基于程序运行的计算机种类不同而大小不同。
+如果在64位架构的机器上，它们是64位，如果在32位架构的机器上，那它们就是32位。
 
-Rust also has two primitive floating-point numbers: `f32` and `f64`.
-They are 32 bits and 64 bits in size, respectively.
-The default is `f64`.
+那么如何选择这些类型呢？如果你真的不知道怎么选，那么默认就是个好的选择:
+整数类型默认是`i32`。
+
+`isize`/`usize`主要用于索引某种集合。我们马上就会在第一个集合——数组——中讲到更多相关的内容。
+
+## 浮点数
+
+Rust也有两种基本的浮点数类型: `f32` and `f64`.
+它们分别是32位和64位大小。
+默认是 `f64`.
 
 ```rust
 fn main() {
@@ -55,16 +55,17 @@ fn main() {
 }
 ```
 
-Floating-point numbers are represented according to the IEEE-754 standard.
-`f32` is a single-precision float, `f64` is double-precision.
+浮点数是根据IEEE-754标准来表示的。
+`f32`是单精度浮点数, `f64`是双精度浮点数.
 
-## Tuples
+## 元组
 
-The other type we’ve seen previously is the tuple type.
-Tuples have an ‘arity’, or size.
-We might say “that’s a 3-tuple” or “that’s a 5-tuple.”
+我们之前见过的另一种类型是元组（tuple）。
+元组有‘数量（arity）’，也就是大小。
+我们可能会这么说，“这是个3元组”，或者，“这是个5元组”。
 
-Each position in a tuple has a distinct type:
+元组的每个位置，都有明确的类型:
+
 
 ```rust
 fn main() {
@@ -72,12 +73,12 @@ fn main() {
 }
 ```
 
-Tuples are used sparingly in Rust code.
-This is because the elements of a tuple are anonymous, which can make code hard to read.
+元组在Rust代码中使用比较保守。
+这是因为元组中的元素是匿名的，让代码可读性变差。
 
-### Tuple indexing
+### 元组索引
 
-To access an element of a tuple, we use a `.` followed by the index we want to access:
+我们可以使用`.`后面加上我们想访问的索引来访问元组的元素:
 
 ```rust
 fn main() {
@@ -89,27 +90,27 @@ fn main() {
 }
 ```
 
-As you can see, the first index is `0`.
+如你所见，索引从`0`开始的。
 
-### Single-element tuples
+### 单元素元组
 
-There’s one last trick with tuples: `(5)` is actually ambiguous: is it a tuple, or is it a `5` in parethesis?
-If you need to disambiguate, use a comma:
+还有最后一个使用元组的技巧: `(5)`实际上是有歧义的，它到底是一个元组还是在括号里的`5`？
+使用逗号，可以消除歧义:
 
 ```rust
 fn main() {
     let x = (5); // x is an i32, no tuple. Think of it like (5 + 1) without the + 1, they’re for grouping.
-
+                 // x是i32，不是元组。
     let x = (5,); // x is a (i32), a tuple with one element.
+                  // x是(i32)，是包含单个元素的元组。
 }
 ```
 
-## Functions
+## 函数
 
-There’s one more type that we’ve been using, but you haven’t seen written explicitly.
-Functions!
-Functions also have a type, and yes, you can even have variables which hold functions!
-Here’s an example:
+还有一种类型，我们一直在用，但是还没有明确的写出来。那就是，函数！
+函数也是一种类型，是的，你甚至可以把函数作为变量！
+这有个示例:
 
 ```rust
 fn plus_one(x: i32) -> i32 {
@@ -124,31 +125,30 @@ fn main() {
 }
 ```
 
-As you can see, the type is very similar to the declaration.
-Here, let’s put them side by side:
+如你所见，类型声明非常相似:
 
 ```rust,ignore
 fn(i32) -> i32 // type
 fn plus_one(x: i32) -> i32 { // declaration
 ```
 
-If we take the declaration, and drop the name...
+如果我们拿掉声明，去掉名字...
 
 ```rust,ignore
 fn(i32) -> i32 // type
 fn(x: i32) -> i32 {
 ```
 
-And then drop the names of the arguments...
+然后再去掉参数名...
 
 ```rust,ignore
 fn(i32) -> i32 // type
 fn(i32) -> i32 {
 ```
 
-It’s the same! Well, we need to drop that `{` as well.
+就完全相同了！当然，我们也需要把`{`去掉。
 
-Finally, if you’ll notice in that example, we can create a binding with a function in it:
+最后，在本例中你需要注意的是，我们能用函数创建绑定:
 
 ```rust,ignore
 fn main() {
@@ -158,9 +158,8 @@ fn main() {
 }
 ```
 
-... and call it with `()`s just like if we had used the original name.
 
-### Functions as arguments
+### 把函数作为参数
 
 So why not just use the original name?
 Well, we can pass functions as arguments to other functions!
@@ -181,7 +180,7 @@ fn twice(x: i32, f: fn(i32) -> i32) -> i32 {
     result = f(result);
     result = f(result);
 
-    result 
+    result
 }
 
 fn main() {
@@ -283,7 +282,7 @@ fn main() {
     let mut a = [1, 2, 3, 4, 5];
 
     let first = a[0];
-    
+
     a[0] = 7;
 
     println!("The value of first is: {}", first);
@@ -423,8 +422,8 @@ Rust’s most primitive alphabetic type is the `char`:
 
 ```rust
 fn main() {
-   let c = 'z'; 
-   let z = 'ℤ'; 
+   let c = 'z';
+   let z = 'ℤ';
 }
 ```
 
@@ -455,4 +454,3 @@ String literals are immutable, and of a fixed length.
 Rust has a second string type, `String`, that we’ll discuss in section 8.
 
 `&str`s are UTF-8 encoded.
-

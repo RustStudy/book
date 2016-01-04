@@ -138,7 +138,7 @@ Rust是 *预编译* 语言，也就是说，只要你编译了这个程序，然
 # Hello, Cargo!
 
 Cargo是Rust的构建（build）系统和包管理器，Rustacean们用Cargo去管理他们的Rust项目。
-Fargo管理三件事：构建你的代码、下载你代码依赖的库，以及构建这些库。
+Cargo管理三件事：构建你的代码、下载你代码依赖的库，以及构建这些库。
 我们调用你代码需要“依赖（dependencies）”的库，因为你的代码依赖于它们。
 
 最简单的Rsut程序没有任何依赖，所以现在，你只使用了其功能的第一部分。
@@ -193,7 +193,7 @@ Cargo使用这个约定来使编译成功，但是如果你愿意的话也可以
 
 接下来，在你的 *hello_world* 目录中创建一个新的文件，命名为Cargo.toml。
 
-确保Cargo.tom文件名的首字母C是大写，否则Cargo将忽略掉配置文件。
+确保Cargo.toml文件名的首字母C是大写，否则Cargo将忽略掉配置文件。
 
 该文件是 *[TOML]*（Tom’s Obvious,Minimal Language，译者本身也[翻译了TOML的文档]，但是pull request一直没被merge，感兴趣的可以去看）格式的。TOML类似于INI，但是有一些其他优点，它被用来作为Cargo的配置文件格式。
 
