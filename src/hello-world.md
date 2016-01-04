@@ -1,7 +1,14 @@
 # Hello, world!
 
+<<<<<<< HEAD
 现在，你已经安装了Rust，让我们开始写第一个Rust程序。
 在学习新语言的时候，有一个传统，就是写一个小程序来打印“hello，world！”，在本节，我们将遵循这一传统。
+=======
+Now that you have Rust installed, let’s write your first Rust program. It's
+traditional when learning a new language to write a little program to print the
+text “Hello, world!” to the screen, and in this section, we'll follow that
+tradition.
+>>>>>>> 3092afb04049eb6113c33f38258398a5574f1a0a
 
 以这样一个简单程序开始的一个好处就是，你可以快速验证编译器是安装好并能正常工作的。
 在屏幕上打印信息也是很常见的，所以尽早练习也是件好事。
@@ -49,10 +56,17 @@ $ ./main
 Hello, world!
 ```
 
+<<<<<<< HEAD
 对于Windows来说，只需要把`main`换成`main.exe`。
 不管你用哪种操作系统，你应该会看见终端输出Hello，world！字符串。
 如果你完成了上述示例，那么恭喜你！
 你已经正式写了一个Rust程序，你已经成为一名Rust程序员了！欢迎。
+=======
+In Windows, just replace `main` with `main.exe`. Regardless of your operating
+system, you should see the string `Hello, world!` print to the terminal. If you
+did, then congratulations! You've officially written a Rust program. That makes
+you a Rust programmer! Welcome.
+>>>>>>> 3092afb04049eb6113c33f38258398a5574f1a0a
 
 ## Rust程序剖析
 
@@ -79,12 +93,25 @@ Rust要求所有的函数体都必须如此，一个比较好的风格，就是�
     println!("Hello, world!");
 ```
 
+<<<<<<< HEAD
 该行代码在这个小程序中的作用就是： 在屏幕上打印文本。
 这里有许多重要的细节，首先，这里（println前面）有四个空格，而非制表符。
 
 第二个重要的部分就是`println!()`这行。它实际上是调用了一个 *[Rust宏]（macro）* ，宏是用来实现Rust元编程的。如果直接调用函数而不是宏，则可以写成这样：`println()`（注意，这里没有”!”）。
 我们将在之后讨论Rust宏的更多细节，但是现在你只需要知道，当你看到“叹号（!）”的时候，意味着你调用的是宏，
 而非普通函数。
+=======
+This line does all of the work in this little program: it prints text to the
+screen. There are a number of details that are important here. The first is
+that it’s indented with four spaces, not tabs.
+
+The second important part is the `println!()` line. This is calling a Rust
+*[macro]*, which is how metaprogramming is done in Rust. If it were calling a
+function instead, it would look like this: `println()` (without the !). We'll
+discuss Rust macros in more detail later, but for now you just need to
+know that when you see a `!` that means that you’re calling a macro instead of
+a normal function.
+>>>>>>> 3092afb04049eb6113c33f38258398a5574f1a0a
 
 [Rust宏]: macros.html
 
@@ -96,7 +123,12 @@ Rust要求所有的函数体都必须如此，一个比较好的风格，就是�
 
 ## 编译和运行是独立的两步
 
+<<<<<<< HEAD
 在“写一个Rust程序并运行”小节，我们展示了如何运行一个新创建的程序。我们现在将打破这个过程，来研究每一个步骤。
+=======
+In "Writing and Running a Rust Program", we showed you how to run a newly
+created program. We'll break that process down and examine each step now.
+>>>>>>> 3092afb04049eb6113c33f38258398a5574f1a0a
 
 在运行Rust程序之前，你必须编译它。你能通过输入rustc命令来使用Rust编译器，给它传入一个源文件名即可，像这样:
 
@@ -158,7 +190,12 @@ $ cargo --version
 ## 开始使用Cargo
 
 
+<<<<<<< HEAD
 让我们把那个Hello World程序换成Cargo的。想Cargo化一个项目，你需要做三件事：
+=======
+Let’s convert the Hello World program to Cargo. To Cargo-fy a project, you need
+to do three things:
+>>>>>>> 3092afb04049eb6113c33f38258398a5574f1a0a
 
 1. 把你的源文件放到正确的目录下。
 2. 摆脱旧的可执行文件（Windows上的main.exe，其他是main），并且生成一个新的。
@@ -176,14 +213,29 @@ $ mv main.rs src/main.rs
 $ rm main  # or 'del main.exe' on Windows
 ```
 
+<<<<<<< HEAD
 Cargo期望你的源文件待在 *src* 目录里，所以你先得完成这一步。
 留在顶级项目目录（在本例中是 *hello_world* 根目录）中的文件是READMEs、license信息和其他完全和代码无关的文件。
 这样一来，使用Cargo可以帮助你保持项目的美丽和整洁。
 人神各有层天，各归其位！（There's a place for everything, and everything is in its place.）。
+=======
+Cargo expects your source files to live inside a *src* directory, so do that
+first. This leaves the top-level project directory (in this case,
+*hello_world*) for READMEs, license information, and anything else not related
+to your code. In this way, using Cargo helps you keep your projects nice and
+tidy. There's a place for everything, and everything is in its place.
+>>>>>>> 3092afb04049eb6113c33f38258398a5574f1a0a
 
 
+<<<<<<< HEAD
 现在，把 *main.rs* 文件复制到 *src* 目录中，并且删除你用rustc创建的已编译文件。
 跟之前一样，如果你用了Windows，那么就是删除`main.exe`，其他操作系统是`main`。
+=======
+This example retains `main.rs` as the source filename because it's creating an
+executable. If you wanted to make a library instead, you'd name the file
+`lib.rs`. This convention is used by Cargo to successfully compile your
+projects, but it can be overridden if you wish.
+>>>>>>> 3092afb04049eb6113c33f38258398a5574f1a0a
 
 该示例保留了`main.rs`做为源文件名，因为它创建了可执行文件。
 如果你想生成一个库，你需要把文件命名为`lib.rs`。
@@ -191,7 +243,12 @@ Cargo使用这个约定来使编译成功，但是如果你愿意的话也可以
 
 ### 创建配置文件
 
+<<<<<<< HEAD
 接下来，在你的 *hello_world* 目录中创建一个新的文件，命名为Cargo.toml。
+=======
+Make sure to capitalize the `C` in `Cargo.toml`, or Cargo won't know what to do
+with the configuration file.
+>>>>>>> 3092afb04049eb6113c33f38258398a5574f1a0a
 
 确保Cargo.toml文件名的首字母C是大写，否则Cargo将忽略掉配置文件。
 
@@ -219,6 +276,10 @@ authors = [ "Your name <you@example.com>" ]
 
 ## 构建并运行一个Cargo项目
 
+<<<<<<< HEAD
+=======
+## Building and Running a Cargo Project
+>>>>>>> 3092afb04049eb6113c33f38258398a5574f1a0a
 
 通过项目根目录下的 *Cargo.toml* 文件，你应该可以构建并运行你的Hello World程序了！输入下列命令来完成它:
 
@@ -229,7 +290,11 @@ $ ./target/debug/hello_world
 Hello, world!
 ```
 
+<<<<<<< HEAD
 如果一切顺利，你将在终端再次看到`Hello，world！`
+=======
+Bam! If all goes well, `Hello, world!` should print to the terminal once more.
+>>>>>>> 3092afb04049eb6113c33f38258398a5574f1a0a
 
 你刚才是用`cargo build`构建了一个项目，并且使用了`./target/debug/hello_world`运行了它，
 但是你实际上可以使用`cargo run`命令一步完成那两个动作，如下所示:
@@ -253,9 +318,16 @@ Hello, world!
 Cargo知道你项目文件中任何修改，如果最新一次build之后文件有所改变，那么Cargo将会重新构建项目。
 
 
+<<<<<<< HEAD
 对于简单项目来说，Cargo并没有使用到它的诸多功能而只是用了`rustc`，但是它在以后会非常有用。
 对于复杂的项目，用Cargo来协调构建过程会使一切变得更简单。
 用Cargo，你可以只运行`cargo build`，也是它的正确工作方式。
+=======
+With simple projects, Cargo doesn't bring a whole lot over just using `rustc`,
+but it will become useful in the future. With complex projects composed of multiple
+crates, it’s much easier to let Cargo coordinate the build. With Cargo, you can
+just run `cargo build`, and it should work the right way.
+>>>>>>> 3092afb04049eb6113c33f38258398a5574f1a0a
 
 ## 构建发行版
 
@@ -277,7 +349,12 @@ Cargo使用 *Cargo.lock* 文件来记录你应用中的依赖。
 这是Hello World项目中的 *Cargo.lock* 文件。
 该项目没有任何依赖，所以该文件有点单薄。实际上，你永远不需要亲自接触这个文件，只需要交给Cargo处理就行了。
 
+<<<<<<< HEAD
 如果你是从头到尾跟着做的话，你现在应该已经成功使用Cargo构建了hello_world。
+=======
+That’s it! If you've been following along, you should have successfully built
+`hello_world` with Cargo.
+>>>>>>> 3092afb04049eb6113c33f38258398a5574f1a0a
 
 尽管该项目很简单，但是它多少也是使用了你以后Rust职业生涯中会用到的真正工具。事实上，你可以认为实际上所有的Rust项目都是使用下面命令的变种:
 
@@ -325,7 +402,11 @@ fn main() {
 }
 ```
 
+<<<<<<< HEAD
 Cargo已经为你生成了“hello world！”，你就可以开始coding了！
+=======
+Cargo has generated a "Hello World!" for you, and you’re ready to start coding!
+>>>>>>> 3092afb04049eb6113c33f38258398a5574f1a0a
 
 > 注：如果你想了解Cargo更详细的内容，可以去翻阅官方的[Cargo guide]，那里覆盖了它所有的特性。
 
