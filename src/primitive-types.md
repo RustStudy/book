@@ -8,7 +8,7 @@
 
 ```rust
 fn main() {
-    let x: i32 = 5;
+let x: i32 = 5;
 }
 ```
 
@@ -19,13 +19,13 @@ Rust中有很多内置的数字类型.
 
 这里有一个Rust中整数类型的图表:
 
-|        | 符号（signed） | 无符号（unsigned） |
+| | 符号（signed） | 无符号（unsigned） |
 |--------|--------|----------|
-|  8-bit |  i8    |  u8      |
-| 16-bit | i16    | u16      |
-| 32-bit | i32    | u32      |
-| 64-bit | i64    | u64      |
-| arch   | isize  | usize    |
+| 8-bit | i8 | u8 |
+| 16-bit | i16 | u16 |
+| 32-bit | i32 | u32 |
+| 64-bit | i64 | u64 |
+| arch | isize | usize |
 
 
 Rust有符号型和无符号型两种数字类型变种，每个变种都有明确的大小。无符号型数总是正的，符号型数有正有负。
@@ -49,9 +49,9 @@ Rust也有两种基本的浮点数类型: `f32` and `f64`.
 
 ```rust
 fn main() {
-    let x = 2.0; // f64
+let x = 2.0; // f64
 
-    let y: f32 = 3.0; // f32
+let y: f32 = 3.0; // f32
 }
 ```
 
@@ -69,7 +69,7 @@ fn main() {
 
 ```rust
 fn main() {
-    let x: (i32, f64, u8) = (500, 6.4, 1);
+let x: (i32, f64, u8) = (500, 6.4, 1);
 }
 ```
 
@@ -82,11 +82,11 @@ fn main() {
 
 ```rust
 fn main() {
-    let x: (i32, f64, u8) = (500, 6.4, 1);
+let x: (i32, f64, u8) = (500, 6.4, 1);
 
-    let five_hundred = x.0;
-    let six_point_four = x.1;
-    let one = x.2;
+let five_hundred = x.0;
+let six_point_four = x.1;
+let one = x.2;
 }
 ```
 
@@ -99,10 +99,10 @@ fn main() {
 
 ```rust
 fn main() {
-    let x = (5); // x is an i32, no tuple. Think of it like (5 + 1) without the + 1, they’re for grouping.
-                 // x是i32，不是元组。
-    let x = (5,); // x is a (i32), a tuple with one element.
-                  // x是(i32)，是包含单个元素的元组。
+let x = (5); // x is an i32, no tuple. Think of it like (5 + 1) without the + 1, they’re for grouping.
+// x是i32，不是元组。
+let x = (5,); // x is a (i32), a tuple with one element.
+// x是(i32)，是包含单个元素的元组。
 }
 ```
 
@@ -114,14 +114,14 @@ fn main() {
 
 ```rust
 fn plus_one(x: i32) -> i32 {
-    x + 1
+x + 1
 }
 
 fn main() {
-    let f = plus_one;
-    let g: fn(i32) -> i32 = plus_one; // with an explicit type annotation
+let f = plus_one;
+let g: fn(i32) -> i32 = plus_one; // with an explicit type annotation
 
-    let five = f(4);
+let five = f(4);
 }
 ```
 
@@ -152,9 +152,9 @@ fn(i32) -> i32 {
 
 ```rust,ignore
 fn main() {
-    let f = plus_one;
+let f = plus_one;
 
-    let five = f(4);
+let five = f(4);
 }
 ```
 
@@ -167,30 +167,30 @@ Check this out:
 
 ```rust
 fn plus_one(x: i32) -> i32 {
-    x + 1
+x + 1
 }
 
 fn plus_two(x: i32) -> i32 {
-    x + 2
+x + 2
 }
 
 fn twice(x: i32, f: fn(i32) -> i32) -> i32 {
-    let mut result = x;
+let mut result = x;
 
-    result = f(result);
-    result = f(result);
+result = f(result);
+result = f(result);
 
-    result
+result
 }
 
 fn main() {
-    let x = 5;
+let x = 5;
 
-    let y = twice(x, plus_one);
-    let z = twice(x, plus_two);
+let y = twice(x, plus_one);
+let z = twice(x, plus_two);
 
-    println!("The value of y is: {}", y);
-    println!("The value of z is: {}", z);
+println!("The value of y is: {}", y);
+println!("The value of z is: {}", z);
 }
 ```
 
@@ -232,8 +232,8 @@ Somewhat fundamental to all computing, Rust has a boolean type, `bool`, with two
 
 ```rust
 fn main() {
-    let t = true;
-    let f: bool = false; // with explict type annotation
+let t = true;
+let f: bool = false; // with explict type annotation
 }
 ```
 
@@ -248,7 +248,7 @@ Arrays look like this:
 
 ```rust
 fn main() {
-    let a = [1, 2, 3, 4, 5];
+let a = [1, 2, 3, 4, 5];
 }
 ```
 
@@ -256,7 +256,7 @@ An array’s type consists of the type of the elements it contains, as well as t
 
 ```rust
 fn main() {
-    let a: [i32; 5] = [1, 2, 3, 4, 5];
+let a: [i32; 5] = [1, 2, 3, 4, 5];
 }
 ```
 
@@ -266,10 +266,10 @@ We can access elements of an array using indexing:
 
 ```rust
 fn main() {
-    let a = [1, 2, 3, 4, 5];
+let a = [1, 2, 3, 4, 5];
 
-    let first = a[0];
-    let second = a[1];
+let first = a[0];
+let second = a[1];
 }
 ```
 
@@ -279,13 +279,13 @@ Here’s an example, which also shows us how we can modify elements of the array
 
 ```rust
 fn main() {
-    let mut a = [1, 2, 3, 4, 5];
+let mut a = [1, 2, 3, 4, 5];
 
-    let first = a[0];
+let first = a[0];
 
-    a[0] = 7;
+a[0] = 7;
 
-    println!("The value of first is: {}", first);
+println!("The value of first is: {}", first);
 }
 ```
 
@@ -304,11 +304,11 @@ We showed what happens when you access elements of an array, but what if we give
 
 ```rust,should_panic
 fn main() {
-    let a = [1, 2, 3, 4, 5];
+let a = [1, 2, 3, 4, 5];
 
-    let invalid = a[10];
+let invalid = a[10];
 
-    println!("The value of invalid is: {}", invalid);
+println!("The value of invalid is: {}", invalid);
 }
 ```
 
@@ -318,8 +318,8 @@ Change your `src/main.rs` to look like the example, and run it:
 
 ```bash
 $ cargo run
-   Compiling functions v0.1.0 (file:///home/steve/tmp/functions)
-     Running `target/debug/functions`
+Compiling functions v0.1.0 (file:///home/steve/tmp/functions)
+Running `target/debug/functions`
 thread ‘<main>’ panicked at ‘index out of bounds: the len is 5 but the index is 10’, src/main.rs:4
 Process didn’t exit successfully: `target/debug/functions` (exit code: 101)
 ```
@@ -331,7 +331,7 @@ A ‘panic’ can also be induced manually, with the `panic!` macro:
 
 ```rust,should_panic
 fn main() {
-    panic!("Oh no!");
+panic!("Oh no!");
 }
 ```
 
@@ -359,9 +359,9 @@ If we try that with an array, though...
 
 ```ignore
 fn main() {
-    let a = [1, 2, 3, 4, 5];
+let a = [1, 2, 3, 4, 5];
 
-    println!("a is: {}", a);
+println!("a is: {}", a);
 }
 ```
 
@@ -369,10 +369,10 @@ fn main() {
 
 ```bash
 $ cargo run
-   Compiling functions v0.1.0 (file:///home/steve/tmp/functions)
+Compiling functions v0.1.0 (file:///home/steve/tmp/functions)
 src/main.rs:4:25: 4:26 error: the trait `core::fmt::Display` is not implemented for the type `[_; 5]` [E0277]
-src/main.rs:4     println!(“a is {}”, a);
-                                      ^
+src/main.rs:4 println!(“a is {}”, a);
+^
 <std macros>:2:25: 2:56 note: in this expansion of format_args!
 <std macros>:3:1: 3:54 note: in this expansion of print! (defined in <std macros>)
 src/main.rs:4:5: 4:28 note: in this expansion of println! (defined in <std macros>)
@@ -397,9 +397,9 @@ We can ask `println!` to use `Debug` formatting with `:?`:
 
 ```rust
 fn main() {
-    let a = [1, 2, 3, 4, 5];
+let a = [1, 2, 3, 4, 5];
 
-    println!("a is {:?}", a);
+println!("a is {:?}", a);
 }
 ```
 
@@ -407,8 +407,8 @@ This will work:
 
 ```bash
 $ cargo run
-   Compiling functions v0.1.0 (file:///home/steve/tmp/functions)
-     Running `target/debug/functions`
+Compiling functions v0.1.0 (file:///home/steve/tmp/functions)
+Running `target/debug/functions`
 a is [1, 2, 3, 4, 5]
 ```
 
@@ -422,8 +422,8 @@ Rust’s most primitive alphabetic type is the `char`:
 
 ```rust
 fn main() {
-   let c = 'z';
-   let z = 'ℤ';
+let c = 'z';
+let z = 'ℤ';
 }
 ```
 
@@ -442,11 +442,11 @@ We can declare literal strings with `"`s. We’ve seen them already, with `print
 
 ```rust
 fn main() {
-    println!("println! takes a literal string as an argument.");
+println!("println! takes a literal string as an argument.");
 
-    let s = "We can also create bindings to string literals.";
+let s = "We can also create bindings to string literals.";
 
-    let s: &str = "Here’s one with a type annotation.";
+let s: &str = "Here’s one with a type annotation.";
 }
 ```
 
